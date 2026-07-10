@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /projects/
+Allow: /assets/
+Disallow: /admin/
+Disallow: /*.json$
+
+Sitemap: https://omkarlunge.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 1/1s

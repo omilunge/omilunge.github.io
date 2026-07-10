@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omkar Lunge - Hardware Design Engineer. Specializing in embedded systems, PCB design, FPGA, and power electronics.">
+    <meta name="keywords" content="Hardware Engineer, PCB Design, FPGA, Embedded Systems, Power Electronics, Electronics Design">
+    <meta name="author" content="Omkar Lunge">
+    <meta name="theme-color" content="#050816">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Omkar Lunge - Hardware Design Engineer">
+    <meta property="og:description" content="Designing reliable embedded hardware from concept to production.">
+    <meta property="og:image" content="/assets/og-image.png">
+    <meta property="og:url" content="https://omkarlunge.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Omkar Lunge - Hardware Design Engineer">
+    <meta name="twitter:description" content="Designing reliable embedded hardware from concept to production.">
+    <meta name="twitter:image" content="/assets/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://omkarlunge.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <title>Omkar Lunge - Hardware Design Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Omkar Lunge",
+      "url": "https://omkarlunge.com",
+      "image": "/assets/profile-placeholder.svg",
+      "jobTitle": "Hardware Design Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "knowsAbout": ["Embedded Systems", "PCB Design", "FPGA", "Power Electronics", "Hardware Design"],
+      "sameAs": [
+        "https://github.com/omkarlunge",
+        "https://linkedin.com/in/omkarlunge"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="pcb-animation">
+                <svg viewBox="0 0 200 200" width="120" height="120">
+                    <defs>
+                        <linearGradient id="traceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path class="trace" d="M 50 50 L 150 50 L 150 100 L 50 100 L 50 150" stroke="url(#traceGradient)" stroke-width="2" fill="none"/>
+                    <circle class="node" cx="50" cy="50" r="4" fill="#00D9FF"/>
+                    <circle class="node" cx="150" cy="50" r="4" fill="#00D9FF"/>
+                    <circle class="node" cx="150" cy="100" r="4" fill="#3B82F6"/>
+                    <circle class="node" cx="50" cy="100" r="4" fill="#3B82F6"/>
+                    <circle class="node" cx="50" cy="150" r="4" fill="#00F5FF"/>
+                </svg>
+            </div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">OMKAR</span>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <svg class="grid-background" viewBox="0 0 1000 1000">
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1E293B" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+            </svg>
+            <div id="particleCanvas" class="particle-canvas"></div>
+            <canvas id="animationCanvas"></canvas>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">OMKAR LUNGE</h1>
+                <p class="hero-subtitle">Hardware Design Engineer</p>
+                <p class="hero-description">Designing reliable embedded hardware from concept to production. Focused on transforming complex technical challenges into elegant, manufacturable solutions.</p>
+                
+                <div class="hero-focus">
+                    <span class="focus-tag">Embedded Systems</span>
+                    <span class="focus-tag">PCB Design</span>
+                    <span class="focus-tag">FPGA</span>
+                    <span class="focus-tag">Power Electronics</span>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <div class="social-links">
+                        <a href="https://github.com/omkarlunge" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/omkarlunge" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.438-.103.25-.129.599-.129.948v5.419h-3.554s.05-8.736 0-9.646h3.554v1.364c.429-.659 1.196-1.597 2.905-1.597 2.122 0 3.714 1.388 3.714 4.373v5.506zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.709 0-.968.779-1.71 1.951-1.71 1.17 0 1.914.742 1.939 1.71 0 .951-.769 1.709-1.975 1.709zm1.946 11.597H3.392V9.806h3.891v10.646zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-illustration">
+                <svg class="engineer-illustration" viewBox="0 0 300 400" width="300" height="400">
+                    <defs>
+                        <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FDB4B4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F8A9A9;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="shirtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1E1E2E;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2A2A3E;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Head -->
+                    <circle cx="150" cy="80" r="35" fill="url(#skinGradient)"/>
+                    
+                    <!-- Hair -->
+                    <path d="M 115 80 Q 115 45 150 45 Q 185 45 185 80" fill="#2C2C2C"/>
+                    
+                    <!-- Eyes -->
+                    <circle cx="135" cy="75" r="4" fill="#000"/>
+                    <circle cx="165" cy="75" r="4" fill="#000"/>
+                    
+                    <!-- Smile -->
+                    <path d="M 135 90 Q 150 100 165 90" stroke="#E8B4B4" stroke-width="2" fill="none"/>
+                    
+                    <!-- Body/Shirt -->
+                    <path d="M 120 115 L 100 200 L 200 200 L 180 115 Z" fill="url(#shirtGradient)"/>
+                    
+                    <!-- Arms -->
+                    <line x1="100" y1="130" x2="60" y2="180" stroke="url(#skinGradient)" stroke-width="18" stroke-linecap="round"/>
+                    <line x1="200" y1="130" x2="240" y2="180" stroke="url(#skinGradient)" stroke-width="18" stroke-linecap="round"/>
+                    
+                    <!-- Oscilloscope (Right hand) -->
+                    <g class="oscilloscope">
+                        <rect x="220" y="160" width="70" height="50" rx="4" fill="#FFD700" opacity="0.9"/>
+                        <rect x="225" y="165" width="60" height="30" fill="#1A1A1A"/>
+                        <!-- Screen display lines -->
+                        <line x1="230" y1="175" x2="280" y2="175" stroke="#00D9FF" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="230" y1="180" x2="275" y2="180" stroke="#00D9FF" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="230" y1="185" x2="270" y2="185" stroke="#00D9FF" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="230" y1="190" x2="278" y2="190" stroke="#00D9FF" stroke-width="1.5" opacity="0.7"/>
+                    </g>
+                    
+                    <!-- PCB (Left hand) -->
+                    <g class="pcb-board">
+                        <rect x="20" y="160" width="60" height="50" rx="3" fill="#1E7E34" opacity="0.85"/>
+                        <!-- Traces -->
+                        <line x1="30" y1="170" x2="70" y2="170" stroke="#00D9FF" stroke-width="1.5" opacity="0.8"/>
+                        <line x1="30" y1="180" x2="75" y2="180" stroke="#3B82F6" stroke-width="1.5" opacity="0.8"/>
+                        <line x1="30" y1="190" x2="68" y2="190" stroke="#00D9FF" stroke-width="1.5" opacity="0.8"/>
+                        <!-- Pads/Components -->
+                        <circle cx="25" cy="175" r="3" fill="#FFD700" opacity="0.8"/>
+                        <circle cx="75" cy="175" r="3" fill="#FFD700" opacity="0.8"/>
+                        <circle cx="30" cy="200" r="3" fill="#FFD700" opacity="0.8"/>
+                        <circle cx="65" cy="200" r="3" fill="#FFD700" opacity="0.8"/>
+                    </g>
+                    
+                    <!-- Desk -->
+                    <path d="M 80 250 L 220 250 L 215 380 L 85 380 Z" fill="#2A2A3E" opacity="0.6"/>
+                    <ellipse cx="150" cy="250" rx="75" ry="8" fill="#3A3A4E" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-profile">
+                    <div class="profile-image">
+                        <svg viewBox="0 0 200 200" width="200" height="200">
+                            <circle cx="100" cy="100" r="95" fill="none" stroke="#00D9FF" stroke-width="1" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="90" fill="url(#profileGradient)"/>
+                            <defs>
+                                <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1E293B;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Simplified profile silhouette -->
+                            <circle cx="100" cy="60" r="20" fill="#00D9FF" opacity="0.3"/>
+                            <ellipse cx="100" cy="120" rx="30" ry="35" fill="#00D9FF" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="about-text">
+                        <p class="about-description">Electronics & Communication Engineer passionate about designing reliable embedded hardware and transforming ideas into manufacturable products. With a strong foundation in embedded systems and a keen eye for detail, I thrive on solving complex technical challenges.</p>
+                        
+                        <div class="interests">
+                            <h3>Interests</h3>
+                            <ul class="interests-list">
+                                <li>Embedded Systems</li>
+                                <li>PCB Design & Layout</li>
+                                <li>Power Electronics</li>
+                                <li>FPGA Development</li>
+                                <li>Signal Integrity</li>
+                                <li>High-Speed Interfaces</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-value"><span class="counter" data-target="1">0</span>+</div>
+                                <div class="stat-label">Years in Industry</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value"><span class="counter" data-target="20">0</span>+</div>
+                                <div class="stat-label">Engineering Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value"><span class="counter" data-target="5">0</span>%</div>
+                                <div class="stat-label">BOM Optimization</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1: OscLog -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 300" width="100%" height="100%">
+                            <defs>
+                                <linearGradient id="oscBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#oscBg)"/>
+                            
+                            <!-- Oscilloscope visualization -->
+                            <rect x="40" y="40" width="320" height="220" rx="8" fill="#0A0E27" stroke="#00D9FF" stroke-width="2"/>
+                            <rect x="50" y="50" width="300" height="200" fill="#000"></rect>
+                            
+                            <!-- Grid -->
+                            <g opacity="0.1">
+                                <line x1="50" y1="150" x2="350" y2="150" stroke="#00D9FF" stroke-width="1"/>
+                                <line x1="200" y1="50" x2="200" y2="250" stroke="#00D9FF" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Waveform -->
+                            <path d="M 80 140 Q 100 120 120 140 Q 140 160 160 140 Q 180 120 200 140 Q 220 160 240 140 Q 260 120 280 140 Q 300 160 320 140" stroke="#00D9FF" stroke-width="2" fill="none"/>
+                            
+                            <!-- Text -->
+                            <text x="60" y="270" font-family="JetBrains Mono" font-size="12" fill="#94A3B8">FPGA Oscilloscope Platform</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>OscLog</h3>
+                        <p>Open-source FPGA oscilloscope platform focused on high-speed signal acquisition, modular architecture, USB streaming and PC visualization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">STM32</span>
+                            <span class="tech-tag">FPGA</span>
+                            <span class="tech-tag">USB HS</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="projects/osclog.html" class="btn btn-small btn-primary">Learn More</a>
+                            <a href="https://github.com/omkarlunge/osclog" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Industrial DAQ -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 300" width="100%" height="100%">
+                            <defs>
+                                <linearGradient id="daqBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#2F1B4E;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#daqBg)"/>
+                            
+                            <!-- Data channels visualization -->
+                            <g opacity="0.8">
+                                <rect x="50" y="60" width="40" height="30" rx="4" fill="#00D9FF" opacity="0.2" stroke="#00D9FF" stroke-width="1.5"/>
+                                <rect x="100" y="60" width="40" height="30" rx="4" fill="#00D9FF" opacity="0.2" stroke="#00D9FF" stroke-width="1.5"/>
+                                <rect x="150" y="60" width="40" height="30" rx="4" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+                                <rect x="200" y="60" width="40" height="30" rx="4" fill="#00D9FF" opacity="0.2" stroke="#00D9FF" stroke-width="1.5"/>
+                                
+                                <rect x="50" y="110" width="40" height="30" rx="4" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+                                <rect x="100" y="110" width="40" height="30" rx="4" fill="#00D9FF" opacity="0.2" stroke="#00D9FF" stroke-width="1.5"/>
+                                <rect x="150" y="110" width="40" height="30" rx="4" fill="#00D9FF" opacity="0.2" stroke="#00D9FF" stroke-width="1.5"/>
+                                <rect x="200" y="110" width="40" height="30" rx="4" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+                            </g>
+                            
+                            <!-- Signal indicators -->
+                            <circle cx="80" cy="180" r="8" fill="#00D9FF" opacity="0.6"/>
+                            <circle cx="130" cy="190" r="8" fill="#3B82F6" opacity="0.6"/>
+                            <circle cx="180" cy="175" r="8" fill="#00D9FF" opacity="0.6"/>
+                            <circle cx="230" cy="185" r="8" fill="#3B82F6" opacity="0.6"/>
+                            
+                            <!-- Connecting lines -->
+                            <line x1="80" y1="180" x2="130" y2="190" stroke="#00D9FF" stroke-width="1" opacity="0.3"/>
+                            <line x1="130" y1="190" x2="180" y2="175" stroke="#3B82F6" stroke-width="1" opacity="0.3"/>
+                            <line x1="180" y1="175" x2="230" y2="185" stroke="#00D9FF" stroke-width="1" opacity="0.3"/>
+                            
+                            <!-- Text -->
+                            <text x="60" y="270" font-family="JetBrains Mono" font-size="12" fill="#94A3B8">16-Channel Industrial DAQ</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>Industrial DAQ</h3>
+                        <p>16-channel industrial data acquisition platform supporting RTD, 4-20mA sensors and high precision analog measurement for industrial applications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ARM Cortex</span>
+                            <span class="tech-tag">Analog Design</span>
+                            <span class="tech-tag">CAN Bus</span>
+                            <span class="tech-tag">Modbus</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="projects/daq.html" class="btn btn-small btn-primary">Learn More</a>
+                            <a href="https://github.com/omkarlunge/industrial-daq" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Battery Charger -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 300" width="100%" height="100%">
+                            <defs>
+                                <linearGradient id="batteryBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1B4D3E;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#batteryBg)"/>
+                            
+                            <!-- Battery icon -->
+                            <rect x="120" y="100" width="60" height="100" rx="4" fill="none" stroke="#00D9FF" stroke-width="2"/>
+                            <rect x="120" y="90" width="60" height="12" rx="2" fill="#00D9FF" opacity="0.3"/>
+                            
+                            <!-- Charge level visualization -->
+                            <rect x="125" y="105" width="50" height="40" fill="#00D9FF" opacity="0.3"/>
+                            <rect x="125" y="145" width="50" height="35" fill="#3B82F6" opacity="0.2"/>
+                            
+                            <!-- Charge curve graph -->
+                            <polyline points="220,200 250,190 270,175 290,150 310,140" stroke="#00D9FF" stroke-width="2" fill="none"/>
+                            <polyline points="220,200 250,200 270,200 290,200 310,200" stroke="#3B82F6" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+                            
+                            <!-- Text -->
+                            <text x="60" y="270" font-family="JetBrains Mono" font-size="12" fill="#94A3B8">120W Battery Charger</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>Configurable Battery Charger</h3>
+                        <p>120W configurable CCCV battery charger featuring intelligent charging algorithms, battery management, and comprehensive telemetry.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power Electronics</span>
+                            <span class="tech-tag">SMD Design</span>
+                            <span class="tech-tag">Firmware</span>
+                            <span class="tech-tag">Testing</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="projects/charger.html" class="btn btn-small btn-primary">Learn More</a>
+                            <a href="https://github.com/omkarlunge/battery-charger" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="skills-content">
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="expertise-icon">⚙️</div>
+                        <h3>Hardware Design</h3>
+                        <p>Schematic capture, PCB architecture, component selection, and power distribution design.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">🔌</div>
+                        <h3>PCB Design & Layout</h3>
+                        <p>Multi-layer PCB routing, impedance control, thermal management, and manufacturing optimization.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">💻</div>
+                        <h3>Embedded Systems</h3>
+                        <p>Microcontroller programming, firmware development, real-time systems, and hardware abstraction.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">⚡</div>
+                        <h3>Power Electronics</h3>
+                        <p>DC-DC converters, power management, thermal design, and efficiency optimization.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">🔷</div>
+                        <h3>FPGA Development</h3>
+                        <p>Verilog/SystemVerilog, digital signal processing, and reconfigurable computing solutions.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">📡</div>
+                        <h3>Signal Integrity</h3>
+                        <p>High-speed design, EMI/EMC, impedance matching, and signal integrity analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="tools-section">
+                    <h3>Tools & Technologies</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-name">STM32</div>
+                            <p>MCU Development</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">Altium</div>
+                            <p>PCB Design</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">FPGA</div>
+                            <p>Verilog/HDL</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">LTspice</div>
+                            <p>SPICE Simulation</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">Python</div>
+                            <p>Automation</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">Git</div>
+                            <p>Version Control</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">Oscilloscope</div>
+                            <p>Measurement</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-name">MATLAB</div>
+                            <p>Signal Processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Focus Section -->
+    <section id="focus" class="focus">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Focus</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="focus-grid">
+                <div class="focus-card">
+                    <h4>FPGA Development</h4>
+                    <p>Advancing Verilog/SystemVerilog expertise for complex digital designs and DSP implementations.</p>
+                </div>
+                <div class="focus-card">
+                    <h4>USB 3.0 Interfaces</h4>
+                    <p>Mastering high-speed serial protocols and superspeed signal integrity challenges.</p>
+                </div>
+                <div class="focus-card">
+                    <h4>Signal Integrity</h4>
+                    <p>Deep dive into SI analysis, impedance matching, and PCB stackup optimization.</p>
+                </div>
+                <div class="focus-card">
+                    <h4>DDR Interfaces</h4>
+                    <p>Memory controller design and high-speed memory interface characterization.</p>
+                </div>
+                <div class="focus-card">
+                    <h4>Embedded Linux</h4>
+                    <p>Linux kernel development and embedded system integration for edge computing.</p>
+                </div>
+                <div class="focus-card">
+                    <h4>RF Design</h4>
+                    <p>Radiofrequency circuit design, antenna tuning, and wireless system architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Hardware Engineer</h3>
+                        <p class="company">Lava International</p>
+                        <p class="timeline-date">Jul 2025 – Present</p>
+                        <ul class="responsibilities">
+                            <li>Hardware schematic design and optimization</li>
+                            <li>PCB design review and verification</li>
+                            <li>Board bring-up and hardware debugging</li>
+                            <li>Interface validation and characterization</li>
+                            <li>Power integrity and thermal analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Hardware Design Intern</h3>
+                        <p class="company">Lava International</p>
+                        <p class="timeline-date">Dec 2024 – Jun 2025</p>
+                        <ul class="responsibilities">
+                            <li>PCB layout and routing under supervision</li>
+                            <li>Schematic design assistance</li>
+                            <li>Hardware validation testing</li>
+                            <li>Component selection and sourcing</li>
+                            <li>Documentation and design documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications & Recognition</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <h4>Advanced PCB Design</h4>
+                    <p>Altium Academy</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🔬</div>
+                    <h4>Signal Integrity Fundamentals</h4>
+                    <p>Samtec Engineering Training</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">⚡</div>
+                    <h4>Power Electronics Design</h4>
+                    <p>Texas Instruments Design Summit</p>
+                    <p class="cert-date">2023</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🎓</div>
+                    <h4>B.E. Electronics & Communication</h4>
+                    <p>University</p>
+                    <p class="cert-date">2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github" class="github">
+        <div class="container">
+            <div class="section-header">
+                <h2>GitHub Activity</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="github-content">
+                <div class="github-profile">
+                    <div class="github-header">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#00D9FF">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <h3>@omkarlunge</h3>
+                    </div>
+                    <p>Hardware Engineer | FPGA Enthusiast | Open Source Contributor</p>
+                    <a href="https://github.com/omkarlunge" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Visit Profile</a>
+                </div>
+                
+                <div class="repos-list">
+                    <div class="repo-item">
+                        <h4>osclog</h4>
+                        <p>Open-source FPGA oscilloscope platform</p>
+                        <div class="repo-stats">
+                            <span>⭐ 240</span>
+                            <span>🔀 45</span>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <h4>industrial-daq</h4>
+                        <p>16-channel industrial data acquisition system</p>
+                        <div class="repo-stats">
+                            <span>⭐ 120</span>
+                            <span>🔀 25</span>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <h4>battery-charger</h4>
+                        <p>120W intelligent battery charging system</p>
+                        <div class="repo-stats">
+                            <span>⭐ 89</span>
+                            <span>🔀 18</span>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <h4>fpga-dsp</h4>
+                        <p>FPGA-based digital signal processing library</p>
+                        <div class="repo-stats">
+                            <span>⭐ 156</span>
+                            <span>🔀 32</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to get in touch.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:omkar@example.com" class="contact-card">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>omkar@example.com</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/omkarlunge" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <div class="contact-icon">💻</div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <p>@omkarlunge</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/omkarlunge" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <div class="contact-icon">🔗</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <p>Omkar Lunge</p>
+                            </div>
+                        </a>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Bangalore, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Omkar Lunge. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Back to Top</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/omkarlunge" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a>
+                    <a href="https://linkedin.com/in/omkarlunge" target="_blank" rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

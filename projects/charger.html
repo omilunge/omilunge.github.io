@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Configurable Battery Charger - 120W intelligent charging system by Omkar Lunge">
+    <meta name="keywords" content="Battery Charger, Power Electronics, CCCV, Battery Management">
+    <title>Battery Charger - Power Electronics | Omkar Lunge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(59, 130, 246, 0.05));
+        }
+
+        .project-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .project-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .project-section {
+            padding: 80px 2rem;
+        }
+
+        .project-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent-primary);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .spec-card {
+            background: rgba(16, 24, 39, 0.6);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: var(--radius);
+            padding: 2rem;
+        }
+
+        .spec-card h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .spec-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">OMKAR</span>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../#about" class="nav-link">About</a></li>
+                <li><a href="../#projects" class="nav-link">Projects</a></li>
+                <li><a href="../#skills" class="nav-link">Skills</a></li>
+                <li><a href="../#experience" class="nav-link">Experience</a></li>
+                <li><a href="../#contact" class="nav-link">Contact</a></li>
+                <li><a href="../#resume" class="nav-link nav-link-primary">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <a href="../#projects" class="back-link">← Back to Projects</a>
+            <h1>Configurable Battery Charger</h1>
+            <p>120W intelligent CCCV (Constant Current - Constant Voltage) battery charger with advanced battery management, telemetry, and safety features. Designed for safe and efficient charging of LiPo, LiFePO4, and NiMH batteries.</p>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="project-section">
+        <div class="container">
+            <h2>Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>Power Rating</h3>
+                    <p>120W maximum output with independent channel control</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Voltage Range</h3>
+                    <p>3.7V to 48V configurable with multi-cell support</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Current Control</h3>
+                    <p>Programmable charging current up to 30A per channel</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Battery Types</h3>
+                    <p>LiPo, LiFePO4, NiMH, Lead-acid with chemistry detection</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Safety Features</h3>
+                    <p>Temperature monitoring, over-current/voltage protection, cell balancing</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Interface</h3>
+                    <p>USB-C for programming and real-time telemetry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="project-section">
+        <div class="container">
+            <h2>Power Electronics Architecture</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8;">
+                The charger employs a synchronous buck converter topology for high efficiency operation. Multiple power stages operate independently, allowing simultaneous charging of different battery types. Temperature sensors and voltage monitors provide comprehensive telemetry for intelligent charging algorithms.
+            </p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>Power Stage</h3>
+                    <p>Synchronous buck converter with integrated MOSFETs</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Control MCU</h3>
+                    <p>STM32H743 with real-time algorithm execution</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Monitoring</h3>
+                    <p>Precision current/voltage sensing with 16-bit ADC</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Protection</h3>
+                    <p>Smart fusing and reverse polarity protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="project-section" style="background: linear-gradient(180deg, transparent, rgba(0, 217, 255, 0.02));">
+        <div class="container">
+            <h2>Technologies Used</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0;">
+                <span class="tech-tag">Power Electronics</span>
+                <span class="tech-tag">Buck Converter</span>
+                <span class="tech-tag">STM32 Firmware</span>
+                <span class="tech-tag">Battery Management</span>
+                <span class="tech-tag">MOSFET Driver</span>
+                <span class="tech-tag">USB Protocol</span>
+                <span class="tech-tag">Thermal Design</span>
+                <span class="tech-tag">PCB Layout</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="project-section">
+        <div class="container">
+            <h2>Explore the Project</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">View hardware schematics, firmware source code, and test results on GitHub.</p>
+            <div class="project-buttons">
+                <a href="https://github.com/omkarlunge/battery-charger" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                <a href="https://github.com/omkarlunge/battery-charger#technical-details" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Technical Details</a>
+                <a href="../#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Omkar Lunge. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../#hero">Back to Top</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/omkarlunge" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/omkarlunge" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

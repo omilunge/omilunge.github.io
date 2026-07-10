@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="profileGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.2" />
+            <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.05" />
+        </radialGradient>
+    </defs>
+    <!-- Background circle -->
+    <circle cx="100" cy="100" r="95" fill="url(#profileGrad)" stroke="#00D9FF" stroke-width="1" opacity="0.3"/>
+    <!-- Head -->
+    <circle cx="100" cy="70" r="25" fill="#00D9FF" opacity="0.2"/>
+    <!-- Body -->
+    <ellipse cx="100" cy="130" rx="30" ry="35" fill="#3B82F6" opacity="0.15"/>
+    <!-- Accent lines -->
+    <line x1="50" y1="100" x2="150" y2="100" stroke="#00D9FF" stroke-width="1" opacity="0.2"/>
+    <line x1="100" y1="40" x2="100" y2="160" stroke="#3B82F6" stroke-width="1" opacity="0.2"/>
+</svg>
